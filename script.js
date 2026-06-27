@@ -1,4 +1,4 @@
-// Smooth scrolling for navigation links
+// Плавная прокрутка для ссылок навигации
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -12,7 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add animation to elements when they come into view
+// Добавляем анимацию к элементам при их появлении на экране
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -27,12 +27,12 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observe all cards and feature items
+// Наблюдаем за всеми карточками и элементами функций
 document.querySelectorAll('.about-card, .feature-item').forEach(element => {
     observer.observe(element);
 });
 
-// Add a fun interaction to the emoji
+// Добавляем забавное взаимодействие к emoji
 const heroEmoji = document.querySelector('.hero-emoji');
 if (heroEmoji) {
     heroEmoji.addEventListener('click', function() {
@@ -42,13 +42,13 @@ if (heroEmoji) {
         }, 300);
     });
 
-    // Add hover effect
+    // Добавляем эффект при наведении
     heroEmoji.addEventListener('mouseenter', function() {
         this.style.cursor = 'pointer';
     });
 }
 
-// Navbar animation on scroll
+// Анимация навбара при прокрутке
 let lastScrollTop = 0;
 const header = document.querySelector('.header');
 
@@ -56,10 +56,10 @@ window.addEventListener('scroll', function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
     if (scrollTop > lastScrollTop) {
-        // Scrolling down
+        // Прокручиваем вниз
         header.style.transform = 'translateY(-100%)';
     } else {
-        // Scrolling up
+        // Прокручиваем вверх
         header.style.transform = 'translateY(0)';
     }
     
@@ -68,7 +68,7 @@ window.addEventListener('scroll', function() {
 
 header.style.transition = 'transform 0.3s ease-in-out';
 
-// Active navigation link highlight
+// Выделение активной ссылки навигации
 window.addEventListener('scroll', function() {
     let current = '';
     
@@ -90,4 +90,4 @@ window.addEventListener('scroll', function() {
     });
 });
 
-console.log('🦊 PixFox website loaded! Веселий та добрий лис вас вітає! 🎉');
+console.log('🦊 Сайт PixFox загружен! Веселая и добрая лисичка вас приветствует! 🎉');
